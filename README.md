@@ -6,7 +6,7 @@
 🔗 Демо
 
 👉 Live preview:
-(вставь сюда ссылку на GitHub Pages / Netlify)
+https://ivan-lyakh.github.io/lending-Barbershop/
 
 📌 Функциональность
 
