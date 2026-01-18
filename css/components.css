@@ -1,0 +1,321 @@
+.container{
+  max-width: 100%;
+  padding: 0px 30px;
+}
+
+
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.title{
+  font-size: 28px;
+  font-weight: 700;
+  color: #303030;
+  font-family: "Raleway", sans-serif;
+  line-height: 130%;
+}
+
+.text{
+  font-size: 16px;
+  font-weight: 400;
+  color: #555555;
+  font-family: "Open Sans", sans-serif;
+  word-spacing: 3px;
+  line-height: 160%;
+}
+
+.subtext{
+  font-size: 14px;
+  font-weight: 400;
+  color: #555555;
+  font-family: "Open Sans", sans-serif;
+  word-spacing: 3px;
+  line-height: 160%;
+}
+
+.header-text{
+  font-family: "Open Sans", sans-serif;
+  color: rgba(157, 164, 189, 0.6);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.header-text-p{
+  font-family: "Open Sans", sans-serif;
+  color: rgba(157, 164, 189, 0.6);
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  line-height: 160%;
+}
+
+
+.button{
+  padding: 12px 40px;
+  background-color: inherit;
+  border: 1px solid #FF6C00;
+  border-radius: 20px;
+  transition: 500ms;
+}
+
+.button:hover{
+  background-color: #FF6C00;
+}
+
+.button:hover a{
+  color: #ffff;
+}
+
+.white{
+  color: #303030;
+}
+
+.dark{
+  color: #ffff;
+}
+
+.button a{
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+/*------------------------------------------------BURGER-------------------------------------------*/
+
+.burger {
+  width: 30px;
+  height: 18px;
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Полоска */
+.burger span,
+.burger::before,
+.burger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.3s ease;
+}
+
+/* Позиции линий */
+.burger span { top: 8px; }
+.burger::before { top: 0; }
+.burger::after { bottom: 0; }
+
+/* Активный бургер (крестик) */
+.burger.active span {
+  opacity: 0;
+}
+
+.burger.active::before {
+  transform: rotate(45deg);
+  top: 8px;
+  background-color: #000;
+}
+
+.burger.active::after {
+  transform: rotate(-45deg);
+  bottom: 8px;
+  background-color: #000;
+}
+
+/* Меню */
+.burger__body {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: #fff;
+  padding: 80px 20px;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 50;
+}
+
+/* Открытое меню */
+.burger__body.open {
+  transform: translateX(0);
+}
+
+/* Навигация */
+.navigation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-list li {
+  padding: 6px 0px;
+  margin-bottom: 25px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.navigation-list a{
+  transition: 300ms;
+}
+
+.navigation-list a:hover{
+  color: #FF6C00;
+}
+
+
+
+.navigation-list li:first-child{
+  margin-top: 25px;
+}
+
+.navigation-list a {
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Блокировка скролла */
+body.lock {
+  overflow: hidden;
+}
+
+
+.burger-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 40;
+}
+
+/* Активное состояние */
+body.lock .burger-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width:768px){
+  .burger{
+  display: none;
+  }
+
+  .burger__body {
+    position: static;
+    transform: none;
+    height: auto;
+    width: auto;
+    background: transparent;
+    padding: 0;
+  }
+
+  /* список в линию */
+  .navigation-list {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .navigation-list li {
+    margin: 0;
+  }
+
+  .navigation-list li:first-child{
+    margin-top: 0px;
+  }
+
+  .navigation-list a {
+    color: #303030;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+/*------------------------------------------------BURGER-------------------------------------------*/
+
+@media (min-width:768px){
+  .container{
+    padding: 0px 40px;
+  }
+}
+
+
+@media (min-width:900px){
+  .title{
+    font-size: 42px;
+  }
+  .text{
+    font-size: 18px;
+  }
+}
+
+@media (min-width:1000px){
+  .container{
+    max-width: 950px;
+    margin: 0px auto;
+  }
+}
+
+@media (min-width:1100px){
+  .container{
+    max-width: 1000px;
+    margin: 0px auto;
+  }
+}
+
+@media (min-width:1200px){
+  .container{
+    max-width: 1050px;
+    margin: 0px auto;
+  }
+}
+
+@media (min-width:1300px){
+  .container{
+    max-width: 1100px;
+    margin: 0px auto;
+  }
+}
+
+@media (min-width:1400px){
+  .container{
+    max-width: 1150px;
+    margin: 0px auto;
+  }
+}
+
+@media (min-width:1500px){
+  .container{
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+}
+
+@media (min-width:1700px){
+  .container{
+    max-width: 1300px;
+    margin: 0px auto;
+  }
+}
+
